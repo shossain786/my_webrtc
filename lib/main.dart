@@ -10,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final _localRenderer = RTCVideoRenderer();
   late MediaStream _localStream;
+
   @override
   dispose() {
     _localStream.dispose();
@@ -59,8 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'audio': false,
       'video': {
         'mandatory': {
-          'minWidth':
-              '1280', // Provide your own width, height and frame rate here
+          'minWidth': '1280',
           'minHeight': '720',
           'minFrameRate': '30',
         },
